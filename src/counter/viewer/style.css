@@ -1,0 +1,10 @@
+.viewer-wrapper {
+  padding: 3.2rem 0;
+  border: 3px solid #676bdd;
+  border-radius: 0.8rem;
+  font-weight: bolder;
+  color: #676bdd;
+  background-color: white;
+  text-align: center;
+  font-size: 7.2rem;
+}

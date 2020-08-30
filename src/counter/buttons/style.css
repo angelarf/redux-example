@@ -1,0 +1,19 @@
+.buttons-wrapper {
+  padding: 20px 0;
+}
+
+.counter-button {
+  border: 3px solid white;
+  border-radius: 0.8rem;
+  color: white;
+  font-size: 3.2rem;
+  height: 10rem;
+  width: 10rem;
+  font-weight: bolder;
+  background-color: #676bdd;
+  cursor: pointer;
+}
+
+.counter-button + .counter-button {
+  margin-left: 4rem;
+}
