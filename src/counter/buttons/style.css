@@ -8,7 +8,7 @@
   color: white;
   font-size: 3.2rem;
   height: 10rem;
-  width: 10rem;
+  min-width: 10rem;
   font-weight: bolder;
   background-color: #676bdd;
   cursor: pointer;
@@ -16,4 +16,22 @@
 
 .counter-button + .counter-button {
   margin-left: 4rem;
+}
+
+.counter-custom-wrapper {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid white;
+  display: flex;
+}
+
+.counter-button.counter-button--custom {
+  width: 100%;
+}
+
+.counter-input {
+  font-size: 3.2rem;
+  margin-right: 0.8rem;
+  height: 10rem;
+  width: 8rem;
 }
