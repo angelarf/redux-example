@@ -9,9 +9,11 @@ const composeEnhancers = composeWithDevTools({
   // Specify name here, actionsBlacklist, actionsCreators and other options if needed
 });
 
+const initialState = {};
+
 const store = createStore(
   rootReducer,
-  {},
+  initialState,
   composeEnhancers(applyMiddleware(thunk))
 );
 export default store;
