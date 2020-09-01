@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
+import { connect } from "react-redux";
+
+import { selectCounter } from "../selectors";
+
 import "./style.css";
 
-const CounterViewer = ({ value = 0 }) => {
-  return <div className="viewer-wrapper">{value}</div>;
+const CounterViewer = ({ value, banana }) => {
+  return <div className="viewer-wrapper">{banana}</div>;
 };
 
-export default CounterViewer;
+const mapStateToProps = (state) => ({
+  banana: selectCounter(state),
+  value: state.counter,
+});
+
+export default connect(mapStateToProps)(CounterViewer);

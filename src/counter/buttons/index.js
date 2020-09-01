@@ -1,12 +1,35 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import "./style.css";
 
-const CounterButtons = ({ increment, decrement, incrementCustom }) => {
+import {
+  incrementAction,
+  decrementAction,
+  sumAction,
+  asyncSum,
+} from "../action-creators";
+
+const CounterButtons = ({
+  increment,
+  decrement,
+  incrementCustom,
+  ...props
+}) => {
   const [customValue, setCustomValue] = useState(2);
-  const handleDecrement = () => {};
-  const handleIncrement = () => {};
-  const handleIncrementCustom = () => {};
-  const handleIncrementAsync = () => {};
+
+  const handleDecrement = () => {
+    decrement();
+  };
+
+  const handleIncrement = () => {
+    increment();
+  };
+  const handleIncrementCustom = () => {
+    incrementCustom(Number(customValue));
+  };
+  const handleIncrementAsync = () => {
+    props.sumAsync();
+  };
 
   return (
     <div className="buttons-wrapper">
@@ -42,4 +65,9 @@ const CounterButtons = ({ increment, decrement, incrementCustom }) => {
   );
 };
 
-export default CounterButtons;
+export default connect(null, {
+  increment: incrementAction,
+  decrement: decrementAction,
+  incrementCustom: sumAction,
+  sumAsync: asyncSum,
+})(CounterButtons);
